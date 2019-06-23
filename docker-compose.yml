@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+  go:
+    container_name: golang-http-api-container
+    image: golang-http-api-image:latest
+    volumes:
+      - ./src:/go/src/app
+    working_dir: /go/src/app
+    ports:
+      - "5000:5000"
+    environment:
+      PORT: 5000
